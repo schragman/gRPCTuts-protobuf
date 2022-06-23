@@ -13,7 +13,7 @@ message Car {
   string make = 1;
   string model =2;
   int32 year = 3;
-
+  BodyStyle body_style = 4;
 }
 
 
@@ -23,4 +23,16 @@ message Person {
   int32 age = 2;
   Address address = 3;
   repeated Car car = 4;
+}
+
+message Dealer {
+  map<int32, Car> model = 1;
+}
+
+enum BodyStyle {
+  UNKOWN = 0;
+  SEDAN = 1;
+  COUPE = 2;
+  SUV = 3;
+
 }

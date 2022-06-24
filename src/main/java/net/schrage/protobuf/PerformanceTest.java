@@ -2,6 +2,7 @@ package net.schrage.protobuf;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.protobuf.Int32Value;
 import com.google.protobuf.InvalidProtocolBufferException;
 import net.schrage.json.JPerson;
 import net.schrage.models.Person;
@@ -29,7 +30,7 @@ public class PerformanceTest {
     //protobuf
     Person sam = Person.newBuilder()
         .setName("sam")
-        .setAge(10)
+        .setAge(Int32Value.newBuilder().setValue(53).build())
         .build();
 
     Runnable proto = () -> {

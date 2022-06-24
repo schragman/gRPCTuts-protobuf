@@ -1,5 +1,6 @@
 package net.schrage.protobuf;
 
+import com.google.protobuf.Int32Value;
 import net.schrage.models.Address;
 import net.schrage.models.Car;
 import net.schrage.models.Person;
@@ -34,7 +35,7 @@ public class CompositionDemo {
 
     Person person = Person.newBuilder()
         .setName("Michael")
-        .setAge(53)
+        .setAge(Int32Value.newBuilder().setValue(53).build())
         .addAllCar(cars)
         /*.addCar(passat)
         .addCar(derby)*/

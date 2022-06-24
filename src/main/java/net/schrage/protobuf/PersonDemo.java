@@ -1,6 +1,7 @@
 package net.schrage.protobuf;
 
 
+import com.google.protobuf.Int32Value;
 import net.schrage.models.Person;
 
 import java.io.IOException;
@@ -14,7 +15,8 @@ public class PersonDemo {
 
     Person sam1 = Person.newBuilder()
         .setName("sam")
-        .setAge(10)
+        //.setAge(53)
+        .setAge(Int32Value.newBuilder().setValue(53).build())
         .build();
 
     Path path = Paths.get("sam.ser");
